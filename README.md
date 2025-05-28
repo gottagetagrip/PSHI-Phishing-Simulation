@@ -1,3 +1,15 @@
+# TODO
+## + Çalıştırma sırası:
++ 1 Hiç çalışmadı ise setup_db.py
++ 2 server.py
++ 3 emailcam.py
++ 4 npm start
+#### (en iyisi .bat ile otomatik çalıştırmak)
+## + Kamera scripti cihazda kesin çalışıyor olmalı, doesnt work on my machine
+## + Email scripti için de sender bilgileri ve api token eklenmeli
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
