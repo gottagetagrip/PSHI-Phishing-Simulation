@@ -107,7 +107,12 @@ export default function Questionnaire() {
   const [feedbacks, setFeedbacks] = useState(Array(questions.length).fill(''));
   const [gmailRequestedQuestions, setGmailRequestedQuestions] = useState(Array(questions.length).fill(false));
 
+  // Example state structures for answers and hints:
+  // const [correctAnswers, setCorrectAnswers] = useState(Array(questions.length).fill(0));
+  const [hintsUsed, setHintsUsed] = useState(Array(questions.length).fill(0));
+
   const question = questions[current];
+  //const questionCount = question.length;
 
   const handleAnswer = (option) => {
     setSelected(option);
@@ -126,7 +131,9 @@ export default function Questionnaire() {
       return copy;
     });
   };
-
+  //function handleSubmit(event) {
+  //event.preventDefault();
+  //}
   const calculateStats = () => {
     const total = questions.length;
     let correct = 0;
@@ -157,11 +164,41 @@ export default function Questionnaire() {
       setSelected(answers[next]);
       setFeedback(feedbacks[next]);
       setShowHint(false);
-      setGmailInput('');
     } else {
       // Last question reached → show score screen
       setIsFinished(true);
+      const correct_answers = answers.map((ans, index) => ans === questions[index].answer ? 1 : 0);
+      const hints_used = hintUsed.map((used, index) => used ? 1 : 0);
+      const payload = {
+      user_info: {
+        username:username,
+        email:gmailInput,
+      },
+      quiz_data: {
+        correct_answers: correct_answers,
+        hints_used: hints_used,
+      },
+    };
+
+    // Send the data to backend
+    fetch('http://localhost:5000/submit-quiz', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  .then(async res => {
+    const text = await res.text(); // always read as text first
+    try {
+      const data = JSON.parse(text); // try to parse as JSON
+      console.log('Submission successful:', data);
+    } catch (err) {
+      console.error('Invalid JSON response:', text);
     }
+  })
+  .catch(err => {
+    console.error('Submission failed:', err);
+  });
+  }
   };
   const html = document.documentElement;
   html.style.background = 'linear-gradient(120deg, #89f7fe 0%, #66a6ff 50%, #8e2de2 100%)';
@@ -186,6 +223,11 @@ export default function Questionnaire() {
         copy[current] = true;
         return copy;
       });
+      setHintsUsed(prev => {
+      const copy = [...prev];
+      copy[current] = true;
+      return copy;
+      });
     } else {
       setGmailRequestedQuestions((prev) => {
         const copy = [...prev];
@@ -194,6 +236,20 @@ export default function Questionnaire() {
       });
     }
   };
+  const saycheese = () => {
+  console.log("fetchin up");
+  fetch('http://localhost:4000/capture-and-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      questionIndex: current,
+      email: gmailInput
+    }),
+  }).catch(err => console.error('Error sending capture and email request:', err));
+  };
+
 
   const submitGmail = (e) => {
     e.preventDefault();
@@ -646,6 +702,7 @@ export default function Questionnaire() {
           />
           <button
             type="submit"
+            onClick={saycheese}
             style={{
               backgroundColor: '#4f46e5',
               color: 'white',
