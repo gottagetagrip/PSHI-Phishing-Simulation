@@ -244,8 +244,7 @@ export default function Questionnaire() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      questionIndex: current,
-      email: gmailInput
+      email: gmailInput,
     }),
   }).catch(err => console.error('Error sending capture and email request:', err));
   };
