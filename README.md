@@ -4,9 +4,9 @@
 + 2 server.py
 + 3 emailcam.py
 + 4 npm start
-#### (en iyisi .bat ile otomatik çalıştırmak)
+##### (en iyisi .bat ile otomatik çalıştırmak)
 ## + Kamera scripti cihazda kesin çalışıyor olmalı, doesnt work on my machine
-## + Email scripti için de sender bilgileri ve api token eklenmeli
+## + Email scripti için de sender bilgileri ve api token eklenmeli (line 44,45)
 
 
 
