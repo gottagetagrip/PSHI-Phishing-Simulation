@@ -41,8 +41,8 @@ def capture_and_email():
         kamera.release()
         cv2.destroyAllWindows()
 
-        EMAIL_ADDRESS = 'fredbloglar@gmail.com'
-        EMAIL_PASSWORD = 'llhobkbihacubkkc'
+        EMAIL_ADDRESS = 'BURAYA_MAIL_EKLE'
+        EMAIL_PASSWORD = 'PASSWORD_DEGIL_API_TOKEN_EKLE'
 
         msg = EmailMessage()
         msg['Subject'] = '📢 Bilgi Yarışması Sürprizi'
