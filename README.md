@@ -1,9 +1,21 @@
-# TODO
+## python dependencies
++ flask
++ flask-cors
++ opencv-python
+```
+pip install flask flask-cors opencv-python
+```
++ os
++ smtplib
++ email.message (comes with the email package)
++ sqlite3
++ json (used implicitly when calling request.json)
 ## Çalıştırma sırası:
 +  Hiç çalışmadı ise setup_db.py (sqlite ile veri yönetimi)
 +  server.py (port 3000)
 +  emailcam.py (port 4000)
 +  npm start (port 5000)
+# TODO
 ##### (en iyisi .bat ile otomatik çalıştırmak)
 ## Kamera scripti cihazda kesin çalışıyor olmalı, doesnt work on my machine
 ## Email scripti için de sender bilgileri ve api token eklenmeli (line 44,45)
