@@ -17,11 +17,12 @@ pip install flask flask-cors opencv-python
 +  npm start (port 5000)
 #### (en iyisi .bat ile otomatik çalıştırmak)
 # TODO
+## Email scripti için api token eklenmeli (line 45)
 ## Kamera scripti cihazda kesin çalışıyor olmalı, doesnt work on my machine
 ## sunum öncesi-sonrası state tutacak, sonrasında test sonu ödül verecek
 ## SQL yeni col eklenecek ?
 ## quiz finished ekranında bilgilendirme maili gidecek yapılacak, kod girilirse de not edilecek.
-## Email scripti için de sender bilgileri ve api token eklenmeli (line 44,45) (done)
+
 ## 20 saniyede 1 kez çalışacak, hepsinin ortalamasını alacak (video ai şeysi), seviyeyi ve ortalamasını alacak sqlde tutaccak.
 
 
