@@ -18,7 +18,9 @@ pip install flask flask-cors opencv-python
 #### (en iyisi .bat ile otomatik çalıştırmak)
 # TODO
 ## Kamera scripti cihazda kesin çalışıyor olmalı, doesnt work on my machine
-## Email scripti için de sender bilgileri ve api token eklenmeli (line 44,45)
+## sunum öncesi-sonrası state tutacak, sonrasında test sonu ödül verecek
+## SQL yeni col eklenecek ?
+## Email scripti için de sender bilgileri ve api token eklenmeli (line 44,45) (done)
 
 
 
