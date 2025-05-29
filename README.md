@@ -22,6 +22,7 @@ pip install flask flask-cors opencv-python
 ## SQL yeni col eklenecek ?
 ## quiz finished ekranında bilgilendirme maili gidecek yapılacak, kod girilirse de not edilecek.
 ## Email scripti için de sender bilgileri ve api token eklenmeli (line 44,45) (done)
+## 20 saniyede 1 kez çalışacak, hepsinin ortalamasını alacak (video ai şeysi), seviyeyi ve ortalamasını alacak sqlde tutaccak.
 
 
 
