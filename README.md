@@ -15,8 +15,8 @@ pip install flask flask-cors opencv-python
 +  server.py (port 3000)
 +  emailcam.py (port 4000)
 +  npm start (port 5000)
+#### (en iyisi .bat ile otomatik çalıştırmak)
 # TODO
-##### (en iyisi .bat ile otomatik çalıştırmak)
 ## Kamera scripti cihazda kesin çalışıyor olmalı, doesnt work on my machine
 ## Email scripti için de sender bilgileri ve api token eklenmeli (line 44,45)
 
