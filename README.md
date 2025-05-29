@@ -20,6 +20,7 @@ pip install flask flask-cors opencv-python
 ## Kamera scripti cihazda kesin çalışıyor olmalı, doesnt work on my machine
 ## sunum öncesi-sonrası state tutacak, sonrasında test sonu ödül verecek
 ## SQL yeni col eklenecek ?
+## quiz finished ekranında bilgilendirme maili gidecek yapılacak, kod girilirse de not edilecek.
 ## Email scripti için de sender bilgileri ve api token eklenmeli (line 44,45) (done)
 
 
