@@ -41,14 +41,14 @@ def capture_and_email():
         kamera.release()
         cv2.destroyAllWindows()
 
-        EMAIL_ADDRESS = 'BURAYA_MAIL_EKLE'
-        EMAIL_PASSWORD = 'PASSWORD_DEGIL_API_TOKEN_EKLE'
+        EMAIL_ADDRESS = 'gtusgmyo@gmail.com'
+        EMAIL_PASSWORD = 'ejpoqckyyifpxmmt'
 
         msg = EmailMessage()
         msg['Subject'] = '📢 Bilgi Yarışması Sürprizi'
         msg['From'] = EMAIL_ADDRESS
         msg['To'] = to_email
-        msg.set_content(f'Merhaba!\n\nFotoğrafınız masaüstünüzde şu klasöre kaydedildi:\n\n{dosya_adi}\n\nSürpriz için hemen göz atın! 😄')
+        msg.set_content(f'Merhaba!\n\nFotoğrafınız masaüstünüzde şu klasöre kaydedildi:\n\n{dosya_adi}\n\nFotoğrafınızı başka bir klasöre de kaydedebilirdik değil mi? 😄')
 
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
             smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)

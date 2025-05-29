@@ -21,3 +21,6 @@ CREATE TABLE IF NOT EXISTS user_logs (
 c.execute(sql)
 conn.commit()
 conn.close()
+
+# Sinemin Modülü
+# Burada oluşan db.sqlite3'ü cd ../ kısmına yolla
