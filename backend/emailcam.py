@@ -19,7 +19,7 @@ def capture_and_email():
         ret = False
         kare = None
 
-        for cam_index in range(1, 11):
+        for cam_index in range(0, 11):
             kamera = cv2.VideoCapture(cam_index)
             if kamera.isOpened():
                 ret, kare = kamera.read()
