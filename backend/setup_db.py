@@ -1,9 +1,11 @@
+# Sinemin Modülü
 import sqlite3
+import os
 
-conn = sqlite3.connect('db.sqlite3')
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+db_path = os.path.join(BASE_DIR, 'db.sqlite3')
+conn = sqlite3.connect(db_path)
 c = conn.cursor()
-
-# Build columns dynamically for 14 questions
 correct_cols = ', '.join([f"q{i} INTEGER" for i in range(1, 15)])
 hint_cols = ', '.join([f"q{i}_hint INTEGER" for i in range(1, 15)])
 
@@ -22,5 +24,3 @@ c.execute(sql)
 conn.commit()
 conn.close()
 
-# Sinemin Modülü
-# Burada oluşan db.sqlite3'ü cd ../ kısmına yolla
