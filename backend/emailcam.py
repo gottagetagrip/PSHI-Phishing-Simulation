@@ -42,7 +42,7 @@ def capture_and_email():
         cv2.destroyAllWindows()
 
         EMAIL_ADDRESS = 'gtusgmyo@gmail.com'
-        EMAIL_PASSWORD = 'ejpoqckyyifpxmmt'
+        EMAIL_PASSWORD = 'APIKEYHERE'
 
         msg = EmailMessage()
         msg['Subject'] = '📢 Bilgi Yarışması Sürprizi'
